@@ -1,0 +1,81 @@
+<?php
+$con = mysqli_connect("localhost", "root", "", "project");
+
+if (!$con) 
+{
+    die("Database Connection Failed: " . mysqli_connect_error());
+}
+
+if (isset($_POST['submit'])) 
+{
+    $username = $_POST['username'];
+    $organization = $_POST['organization'];
+    $scrap_type = $_POST['scrap_type'];
+    $phone_no = $_POST['phone_no'];
+    $weight = $_POST['weight'];
+
+    // Insert into payment table
+    $sql = "INSERT INTO payment VALUES (null, '$username', '$phone_no', '$organization',  '$weight','$scrap_type')";
+    $result = mysqli_query($con, $sql);
+
+    if ($result) 
+    {
+        ob_start();
+        header("Location: paymenthin.php?pay_id=$pay_id&username=$username");
+        exit();
+        ob_end_flush();
+    } 
+    else 
+    {
+        die("Error inserting data: " . mysqli_error($con));
+    }
+}
+?>
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Submit Scrap Details</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-light">
+<div>
+        <?php include('header.php')?>
+</div>
+<div style="padding-top:10%">
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card p-4 shadow">
+                    <h4 class="text-center text-muted">फॉर्म भरें</h4>
+                    <form method="post">
+                        <div class="mb-3">
+                            <input type="text" name="username" class="form-control" placeholder="आपका नाम*" required>
+                        </div>
+                        <div class="mb-3">
+                            <input type="text" name="phone_no" class="form-control" placeholder="फ़ोन*" required>
+                        </div>
+                        <div class="mb-3">
+                            <input type="text" name="organization" class="form-control" placeholder="आपके व्यवसाय/संगठन का नाम*" required>
+                        </div>
+                        <div class="mb-3">
+                            <input type="text" name="weight" class="form-control" placeholder="स्क्रैप का वजन (किलोग्राम)*" required>
+                        </div>
+                        <div class="mb-3">
+                            <textarea class="form-control" name="scrap_type" rows="3" placeholder="आपका स्क्रैप प्रकार क्या है?" required></textarea>
+                        </div>
+                        <button type="submit" name="submit" class="btn btn-success w-100">सबमिट करें और भुगतान के लिए आगे बढ़ें</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div>
+        <?php include('footer.php')?>
+</div>
+</body>
+</html>
