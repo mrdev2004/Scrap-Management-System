@@ -13,17 +13,11 @@ An end-to-end **Scrap Collection, Recycling, and Finished Product E-Commerce Pla
 ## 📌 Table of Contents
 
 - [Project Overview](#-project-overview)
-- [System Architecture & Workflow](#-system-architecture--workflow)
 - [Key Features by Role](#-key-features-by-role)
   - [1. Scrap Seller Module](#1-scrap-seller-module)
   - [2. Recycled Product Buyer Module](#2-recycled-product-buyer-module)
   - [3. Admin Dashboard & Operations](#3-admin-dashboard--operations)
 - [Technology Stack](#-technology-stack)
-- [Database Schema & Architecture](#-database-schema--architecture)
-- [Project Directory Structure](#-project-directory-structure)
-- [Installation & Local Setup](#-installation--local-setup)
-- [Default Demo Credentials](#-default-demo-credentials)
-- [How to Upload This Project to GitHub](#-how-to-upload-this-project-to-github)
 - [Future Enhancements & Best Practices](#-future-enhancements--best-practices)
 
 ---
@@ -104,13 +98,3 @@ Rapid industrialization and consumer waste pose severe environmental challenges.
 - [ ] **Responsive Navigation**: Merge Bootstrap 3 and Bootstrap 5 dependencies to a single unified modern framework for improved mobile responsiveness.
 - [ ] **Order Tracking & Notifications**: Integrate automated SMS / Email notifications for pickup dates and shipping confirmations.
 
----
-
-## 📄 License
-
-This project is licensed under the [MIT License](LICENSE) - feel free to use, modify, and distribute it for academic and commercial purposes.
-
----
-
-### 👨‍💻 Author & Contributions
-Built as an academic and practical initiative for environmental sustainability and digital waste management. Contributions, issues, and feature requests are welcome!
